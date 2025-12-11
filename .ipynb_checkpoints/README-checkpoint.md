@@ -32,21 +32,40 @@ No data cleaning had to be done as the data had no missing values, and outliers 
 ### Key Visualizations
 Include key visualizations that highlight important aspects of the data. Use graphs, charts, or any other visual representation to make your points.
 
-#### Visualization 1: [Title]
+#### Visualization 1: [Wine Counts]
 [Description and interpretation of the first visualization.]
 
-![Visualization 1](path/to/image1.png)
+![bar chart](./images/wine_counts_bar.png)
 
-#### Visualization 2: [Title]
+#### Visualization 2: [Density vs Alcohol]
+[Description and interpretation of the first visualization.]
+
+![scatter plot 1](./images/density_alcohol.png)
+
+#### Visualization 3: [Volatile vs Citric]
 [Description and interpretation of the second visualization.]
 
-![Visualization 2](path/to/image2.png)
+![scatter plot 2](./images/volatile_citric.png)
 
 ## Conclusions/Recommendations
-Summarize the main findings from your analysis. If applicable, provide recommendations based on the insights gained from the data.
+I utilized 3 different modeling techniques: K Nearest Neighbors, Random Forest, and Logistic Regression. 
+
+Below are the results
+
+| Model | Score |
+| ---- | ---- |
+| Random Forest | 0.9945 |
+| KNN | 0.9938 |
+| Logistic Regression | 0.992 |
+
+The scores were all very close, but Random Forest has the least misses, as seen in the below confusion matrix.
+
+![confusion](./images/rf_conf.png)
+
+In the confusion matrix, we see that it only incorrectly predicted 9 wines. It classified 5 white wines as red, and 4 red wines as white.
 
 ## Additional Information
-Include any additional information, references, or resources that might be relevant for understanding the analysis.
+Original Dataset is from [here](https://archive.ics.uci.edu/dataset/186/wine+quality)
 
 ---
 

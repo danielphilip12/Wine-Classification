@@ -30,8 +30,15 @@ def predict():
     # reshapes the array of the inputs into a format the model can understand. 
     output=model.predict(df)[0]# .round(0)
 
+    if output.lower() == 'red':
+        background = 'danger'
+        text_color = 'white'
+    else:
+        background='light'
+        text_color = 'black'
+
     # makes the prediction of the inputs passed in with the model. 
-    return render_template("home.html", prediction_test=output)
+    return render_template("home.html", prediction_test=output, background=background, text_color=text_color)
 # returns the home.html template with prediction_test value passed in so it displays on the page. 
 
 

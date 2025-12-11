@@ -28,7 +28,7 @@ def predict():
     df = pd.DataFrame(columns=request.form.keys(), data=input_array)
     print(df)
     # reshapes the array of the inputs into a format the model can understand. 
-    output=model.predict(df)[0].round(0)
+    output=model.predict(df)[0]# .round(0)
 
     # makes the prediction of the inputs passed in with the model. 
     return render_template("home.html", prediction_test=output)

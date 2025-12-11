@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Enrollment Prediction</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body class="bg-info">
+    <div class="container">
+      <h1 class="display-1 text-center">Student Enrollment Prediction</h1>
+      <br />
+      <div class="row">
+        <div class="col-8">
+          <form
+            action="/predict"
+            method="POST"
+            class="bg-primary p-3 mb-2 rounded border border-danger"
+          >
+            <div class="row">
+              <div class="col-4">
+                <label for="fixed acidity" class="form-label text-light"
+                  >Fixed Acidity:</label
+                >
+                <input
+                  type="number"
+                  name="fixed acidity"
+                  class="form-control"
+                  min="0"
+                  step="any"
+                  required
+                />
+              </div>
+              <div class="col-4">
+                <label for="volatile acidity" class="form-label text-light"
+                  >Volatile Acidity:</label
+                >
+                <input
+                  type="number"
+                  name="volatile acidity"
+                  class="form-control"
+                  min="0"
+                  step="any"
+                  required
+                />
+              </div>
+              <div class="col-4">
+                <label for="residual sugar" class="form-label text-light"
+                  >Residual Sugar:</label
+                >
+                <input
+                  type="number"
+                  name="residual sugar"
+                  class="form-control"
+                  min="0"
+                  step="any"
+                  required
+                />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-4">
+                <label for="chlorides" class="form-label text-light"
+                  >Chlorides:</label
+                >
+                <input
+                  type="number"
+                  name="chlorides"
+                  class="form-control"
+                  min="0"
+                  step="any"
+                  required
+                />
+              </div>
+              <div class="col-4">
+                <label for="free sulfur dioxide" class="form-label text-light"
+                  >Free Sulfur Dioxide:</label
+                >
+                <input
+                  type="number"
+                  name="free sulfur dioxide"
+                  class="form-control"
+                  min="0"
+                  step="any"
+                  required
+                />
+              </div>
+              <div class="col-4">
+                <label for="total sulfur dioxide" class="form-label text-light"
+                  >Total Sulfur Dioxide:</label
+                >
+                <input
+                  type="number"
+                  name="total sulfur dioxide"
+                  class="form-control"
+                  min="0"
+                  step="any"
+                  required
+                />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-4">
+                <label for="density" class="form-label text-light"
+                  >Density:</label
+                >
+                <input
+                  type="number"
+                  name="density"
+                  class="form-control"
+                  min="0"
+                  step="any"
+                  required
+                />
+              </div>
+              <div class="col-4">
+                <label for="ph" class="form-label text-light"
+                  >Ph Level:</label
+                >
+                <input
+                  type="number"
+                  name="ph"
+                  class="form-control"
+                  min="0"
+                  step="any"
+                  required
+                />
+              </div>
+              <div class="col-4">
+                <label for="sulphates" class="form-label text-light"
+                  >Sulphates:</label
+                >
+                <input
+                  type="number"
+                  name="sulphates"
+                  class="form-control"
+                  min="0"
+                  step="any"
+                  required
+                />
+              </div>
+            </div>
+
+            <br />
+            <button type="submit" class="btn btn-success btn-lg col-12">
+              Predict
+            </button>
+          </form>
+        </div>
+        <div class="col-4">
+          {% if prediction_test %}
+          <div class="card bg-primary border border-danger">
+            <div class="card-body">
+              <h5 class="card-title">Prediction Result</h5>
+
+              <p
+                class="card-text display-6 bg-success p-3 mb-2 rounded text-white"
+              >
+                Predicted Wine Color: {{prediction_test | capitalize }}
+                <!-- The predicted house value is ${{ prediction_test }} -->
+              </p>
+            </div>
+            <div
+              class="card-footer text-body-secondary card-subtitle text-body-secondary"
+            >
+              <!-- NOTE: Accurate within around 354 students <strong>on average</strong> -->
+            </div>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

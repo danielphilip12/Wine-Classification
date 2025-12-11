@@ -33,17 +33,17 @@ No data cleaning had to be done as the data had no missing values, and outliers 
 Include key visualizations that highlight important aspects of the data. Use graphs, charts, or any other visual representation to make your points.
 
 #### Visualization 1: [Wine Counts]
-[Description and interpretation of the first visualization.]
+The below barplot shows how many of each wine type is in the dataset. Clearly, the data contains more information on white wines than red wines. 
 
 ![bar chart](./images/wine_counts_bar.png)
 
 #### Visualization 2: [Density vs Alcohol]
-[Description and interpretation of the first visualization.]
+The below scatterplot shows the correlation between density and alcohol. More importantly, it shows us a clear difference betwee red and white wines. They seem to group close together, but they have a separation. 
 
 ![scatter plot 1](./images/density_alcohol.png)
 
 #### Visualization 3: [Volatile vs Citric]
-[Description and interpretation of the second visualization.]
+We see the same thing here (to a lesser extent) where the white wines group more to the left, and the red wines group more towards the center, with a bit among the white wines. 
 
 ![scatter plot 2](./images/volatile_citric.png)
 
